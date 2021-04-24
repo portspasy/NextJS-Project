@@ -1,2 +1,0 @@
-# NextJS-Project
-NextJS-Project
