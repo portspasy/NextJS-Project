@@ -1,5 +1,3 @@
-import React from "react";
-
 const AddEventsPage = () => {
   return (
     <div className="add-events-page-style">
