@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import EventItem from "@/components/EventItem";
 import { API_URL } from "@/config/index";
 
 export default function HomePage({ events }) {
@@ -8,7 +9,7 @@ export default function HomePage({ events }) {
       <h1>Home Page Component</h1>
       {events.length === 0 && <h3>There are no events!</h3>}
       {events.map((evt) => (
-        <img src={evt.image} style={{ maxWidth: "33%" }}></img>
+        <EventItem key={evt.id} evt={evt} />
       ))}
     </Layout>
   );
@@ -20,7 +21,7 @@ export async function getStaticProps() {
   const events = await res.json();
 
   return {
-    props: { events }, // will be passed to the page component as props
+    props: { events: events.slice(0, 3) }, // will be passed to the page component as props
     revalidate: 1, // In seconds
   };
 }
