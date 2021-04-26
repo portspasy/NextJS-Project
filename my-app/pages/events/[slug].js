@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import Layout from "../../components/Layout";
 
 const EventPage = () => {
   const router = useRouter();
@@ -6,9 +7,9 @@ const EventPage = () => {
   console.log(router);
 
   return (
-    <div className="event-page-style">
-      <h1>Event Page Component</h1>
-    </div>
+    <Layout title="Single Event Page">
+      <h1>Single Event Page Component</h1>
+    </Layout>
   );
 };
 
