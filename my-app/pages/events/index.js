@@ -3,11 +3,13 @@ import EventItem from "@/components/EventItem";
 import { API_URL } from "@/config/index";
 
 export default function EventsPage({ events }) {
-  console.log(events);
+  // console.log(events);
   return (
     <Layout title="Events Page">
-      <h1>Home Page Component</h1>
+      <h1>Events</h1>
+
       {events.length === 0 && <h3>There are no events!</h3>}
+
       {events.map((evt) => (
         <EventItem key={evt.id} evt={evt} />
       ))}
