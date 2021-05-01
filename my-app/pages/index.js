@@ -25,12 +25,12 @@ export default function HomePage({ events }) {
 }
 
 export async function getStaticProps() {
-  const res = await fetch(`${API_URL}/api/events`);
+  const res = await fetch(`${API_URL}/events?_sort=date:ASC&_limit=3`); // sorted by date (ASC) and limited to latest 3 events
 
   const events = await res.json();
 
   return {
-    props: { events: events.slice(0, 3) }, // will be passed to the page component as props
+    props: { events }, // will be passed to the page component as props
     revalidate: 1, // In seconds
   };
 }
